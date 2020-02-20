@@ -12,8 +12,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val torch = Torch(this)   // 작성한 Torch클래스 인스턴스화
-
         flashSwitch.setOnCheckedChangeListener { _, isChecked ->
             if(isChecked)
                 startService(intentFor<TorchService>().setAction("on"))
